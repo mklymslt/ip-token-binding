@@ -113,10 +113,10 @@ async function handleRequest(request, env) {
       
       if (storedIP !== clientIP) {
         // IP Mismatch: Block Request (Session Hijacking Detected)
-        const destinationURL = `https://${host}/cdn-cgi/access/logout`;
-        //return new Response.redirect(destinationURL, { status: 302 }); // BLOCK IS FINAL for ALL paths
-        //return new Response(`Forbidden`, { status: 403 });
-        return Response.redirect(destinationURL, 302);
+        
+        
+        return new Response(`Forbidden`, { status: 403 });
+        
       }
     }
 
